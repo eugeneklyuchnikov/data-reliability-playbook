@@ -1,0 +1,30 @@
+# ===================================================================
+# Concise .gitignore for Python Projects
+# ===================================================================
+
+### OS & Editor ###
+# macOS, Windows, IntelliJ, VSCode
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+### Python ###
+# Caches, virtual environments, and distribution packages
+__pycache__/
+*.pyc
+.env
+.venv
+env/
+venv/
+build/
+dist/
+*.egg-info/
+
+### Jupyter Notebook ###
+# Ignore checkpoint files
+.ipynb_checkpoints/
+
+### Docker ###
+# Ignore local docker-compose override files
+docker-compose.override.yml

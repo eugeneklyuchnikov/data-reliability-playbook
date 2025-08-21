@@ -1,0 +1,14 @@
+# This application-specific configuration defines what we want to monitor.
+# It lives with the application code and is mounted into the generic sidecar at runtime.
+
+metrics:
+  - name: "total_events"
+    type: "counter"
+
+  - name: "events_by_country"
+    type: "categorical_counter"
+    field: "country_code"
+
+  - name: "average_age"
+    type: "average"
+    field: "age"

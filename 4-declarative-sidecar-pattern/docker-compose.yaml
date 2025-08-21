@@ -1,0 +1,32 @@
+version: '3.8'
+
+# This file orchestrates our two main services (and Redis).
+# It links the generic sidecar engine to the specific app's configuration.
+
+services:
+  redis:
+    image: "redis:alpine"
+    container_name: redis_queue
+
+  # This is our specific application that produces data.
+  application:
+    container_name: application_producer
+    build:
+      context: ./app_with_observability
+    depends_on:
+      - redis
+    command: ["python", "-u", "producer.py"]
+
+  # This is the observability sidecar for our application.
+  # It USES the generic engine but is CONFIGURED by our specific app.
+  observability-sidecar:
+    container_name: observability_sidecar
+    build:
+      # It builds the image from the generic engine's code.
+      context: ./generic_sidecar_engine
+    volumes:
+      # It mounts the config file FROM our specific app directory.
+      - ./app_with_observability/config.yaml:/usr/src/app/config.yaml
+    depends_on:
+      - redis
+    command: ["python", "-u", "sidecar.py"]

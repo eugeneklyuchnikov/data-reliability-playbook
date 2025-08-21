@@ -1,0 +1,7 @@
+{
+  "event_name": "user_signup",
+  "user_id": "not_a_valid_user_id",
+  "age": 28,
+  "country_code": "DE",
+  "timestamp": "2025-08-21T11:55:00Z"
+}
