@@ -66,9 +66,9 @@ Below are the practical examples discussed in the presentation. Each directory c
 ### ▶️ [4. The Observability Sidecar Pattern](4-declarative-sidecar-pattern/)
 
 **Concept**: A modern, decentralized architectural pattern for observability.
-**Demo**: A `docker-compose` setup that simulates a `data-producer` and a separate `observability-sidecar` container that profiles the data in a decoupled way.
+**Demo**: A `docker-compose` setup that simulates a `app_with_observability` and a separate `generic_sidecar_engine` container that profiles the data in a decoupled way.
 
-### ▶️ [Bonus: The "Gaslight Out" Demo](./bonus-gaslight-out-demo/)
+### ▶️ [Bonus: The "Gaslight Out" Demo](./5-bonus-gaslight-out-demo/)
 
 **Concept**: Illustrating the core problem.
 **Demo**: A Jupyter Notebook that feeds an LLM two subtly incorrect facts and shows how it confidently synthesizes them into a plausible but completely false statement.
